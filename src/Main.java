@@ -6,10 +6,12 @@ public class Main {
         public static void main(String[] args) {
                 String[] a = { "SUMAR", "RESTAR", "MULTIPLICAR", "DIVIDIR" };
                 double num1, num2;
-                int opcion;
+                int opcion, continuar = 0;
 
                 Scanner scan = new Scanner(System.in);
-
+               
+                while (continuar != 9) {
+                    
                 System.out.println("\n                  CALCULADORA\n ");
 
                 System.out.println("0. Suma");
@@ -49,11 +51,14 @@ public class Main {
                         case 3:
 
                                 System.out.println("\nLA DIVISION ES: " + calculadora.dividir());
+                                break;
 
                         default:
                                 System.out.println("Ingrese un valor válido");
                                 break;
                 }
-
+                System.out.println("\n\nSi desea cerrar la calculadora presione '9', si desea volver a calcular presione '0'");
+                continuar = scan.nextInt();
+                }
         }
 }
